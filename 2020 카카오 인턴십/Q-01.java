@@ -26,18 +26,11 @@ class Solution {
     }
 
     private String getNextMoveHand(int number) {
-        switch (number) {
-            case 1:
-            case 4:
-            case 7:
-                return "L";
-            case 3:
-            case 6:
-            case 9:
-                return "R";
-            default:
-                return getNextMoveHandByDistance();
-        }
+        return switch (number) {
+            case 1, 4, 7 -> "L";
+            case 3, 6, 9 -> "R";
+            default -> getNextMoveHandByDistance();
+        };
     }
 
     private String getNextMoveHandByDistance() {
