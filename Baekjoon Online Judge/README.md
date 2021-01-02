@@ -35,10 +35,10 @@
 ### [Brute Force](./Brute%20Force)
 1018 1436 2231 2798 7568
 
-### [Backtracking](./Backtracking)
+### [Backtracking](./Backtracking/Backtracking.md)
 2580 9663 14888 14889 15649 15650 15651 15652
 
-### [DP](./DP)
+### [DP](./DP/Dynamic%20Programming.md)
 1003 1149 1463 1904 1912 1932 2156 2565 2579 2748 9251 9461 10844 11053 11054 12865 2293 11049 11066
 
 ### [DFS & BFS](./DFS%20%26%20BFS)
