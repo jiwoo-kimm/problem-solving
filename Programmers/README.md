@@ -1,6 +1,6 @@
 # 프로그래머스 주제별 알고리즘 문제풀이
 
-### [DFS & BFS](./DFS%20%26%20BFS)
+### [DFS & BFS](https://programmers.co.kr/learn/courses/30/parts/12421)
 
 |문제이름|레벨|코드|풀이|
 |--|--|--|--|
