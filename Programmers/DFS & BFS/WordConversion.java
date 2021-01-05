@@ -7,7 +7,6 @@ import java.util.Arrays;
 public class WordConversion {
 
     public static void main(String[] args) {
-        System.out.println(solution("hit", "cog", new String[]{"hot", "dot", "dog", "lot", "log"}));
         System.out.println(solution("hit", "cog", new String[]{"hot", "dot", "dog", "lot", "log", "cog"}));
     }
 
