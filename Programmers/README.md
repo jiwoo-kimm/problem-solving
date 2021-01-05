@@ -7,4 +7,4 @@
 |타겟 넘버|Level 2|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/DFS%20%26%20BFS/TargetNumber.java)|[풀이](https://velog.io/@jwkim/DFS-target-number)|
 |네트워크|Level 3|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/DFS%20%26%20BFS/Network.java)|[풀이](https://velog.io/@jwkim/BFS-network)|
 |단어 변환|Level 3|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/DFS%20%26%20BFS/WordConversion.java)|[풀이](https://velog.io/@jwkim/DFS-word-conversion)
-|여행 경로|Level 3|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/DFS%20%26%20BFS/TravelRoute.java)||
+|여행 경로|Level 3|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/DFS%20%26%20BFS/TravelRoute.java)|[풀이](https://velog.io/@jwkim/DFS-travel-route)|
