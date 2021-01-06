@@ -14,3 +14,4 @@
 ## 코테 기출문제
 
 ### [2020 카카오 인턴십](https://github.com/jiwoo-kimm/problem-solving/tree/main/2020%20Kakao%20Internship)
+### [2019 카카오 겨울 인턴십](https://github.com/jiwoo-kimm/problem-solving/tree/main/2019%20Kakao%20Winter%20Internship)
