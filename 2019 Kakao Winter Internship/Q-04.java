@@ -1,3 +1,7 @@
+// 2019 카카오 겨울 인턴십
+// 징검다리 건너기
+// 2021.01.17
+
 public class SteppingStone {
 
     public static void main(String[] args) {
