@@ -1,3 +1,7 @@
+// 프로그래머스 '입국심사'
+// 이분탐색
+// 2021.01.13
+
 import java.util.Arrays;
 
 public class Immigration {
