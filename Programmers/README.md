@@ -15,3 +15,12 @@
 |--|--|--|--|
 |입국심사|Level 3|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Binary%20Search/Immigration.java)|[풀이](https://velog.io/@jwkim/binary-search-immigration)|
 |징검다리|Level 4|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Binary%20Search/StepStones.java)|[풀이](https://velog.io/@jwkim/binary-search-step-stones)|
+
+### [Hash](https://programmers.co.kr/learn/courses/30/parts/12077)
+
+|문제이름|레벨|코드|풀이|
+|--|--|--|--|
+|완주하지 못한 선수|Level 1|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Hash/IncompleteRunner.java)|[풀이](https://velog.io/@jwkim/hash-incomplete-runner)|
+|전화번호 목록|Level 2|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Hash/Phone.java)|[풀이](https://velog.io/@jwkim/hash-phone)|
+|위장|Level 2|[코드]()|[풀이]()|
+|베스트앨범|Level 3|[코드]()|[풀이]()|
