@@ -22,5 +22,5 @@
 |--|--|--|--|
 |완주하지 못한 선수|Level 1|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Hash/IncompleteRunner.java)|[풀이](https://velog.io/@jwkim/hash-incomplete-runner)|
 |전화번호 목록|Level 2|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Hash/Phone.java)|[풀이](https://velog.io/@jwkim/hash-phone)|
-|위장|Level 2|[코드]()|[풀이]()|
-|베스트앨범|Level 3|[코드]()|[풀이]()|
+|위장|Level 2|[코드]()|[풀이](https://velog.io/@jwkim/hash-disguise)|
+|베스트앨범|Level 3|[코드]()|[풀이](https://velog.io/@jwkim/hash-best-album)|
