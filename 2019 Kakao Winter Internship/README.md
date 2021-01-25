@@ -6,4 +6,4 @@
 |튜플|Level 1|[코드](./Q-02.java)|[풀이](https://velog.io/@jwkim/2019-kakao-winter-internship-tuple)|
 |불량 사용자|Level 2|[코드](./Q-03.java)|[풀이](https://velog.io/@jwkim/2019-kakao-winter-internship-bad-user)|
 |징검다리 건너기|Level 2|[코드](./Q-04.java)|[풀이](https://velog.io/@jwkim/2019-kakao-winter-internship-stepping-stone)|
-|호텔 방 배정|Level 3||[풀이](https://velog.io/@jwkim/2019-kakao-winter-internship-hotel)|
+|호텔 방 배정|Level 3|[코드](./Q-05.java)|[풀이](https://velog.io/@jwkim/2019-kakao-winter-internship-hotel)|
