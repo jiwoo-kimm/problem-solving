@@ -7,3 +7,4 @@
 |자물쇠와 열쇠|Level 2|[코드](./Q-03.java)|[풀이](https://velog.io/@jwkim/2020-kakao-blind-lock-and-key)|
 |기둥과 보 설치|Level 2|[코드](./Q-05.java)|[풀이](https://velog.io/@jwkim/2020-kakao-blind-column-and-wrapper)|
 |외벽 점검|Level 2|[코드](./Q-06.java)|[풀이](https://velog.io/@jwkim/2020-kakao-blind-wall-check)|
+|블록 이동하기|Level 2|[코드](./Q-07.java)|[풀이](https://velog.io/@jwkim/2020-kakao-blind-block)|
