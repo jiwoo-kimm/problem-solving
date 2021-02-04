@@ -24,3 +24,9 @@
 |전화번호 목록|Level 2|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Hash/Phone.java)|[풀이](https://velog.io/@jwkim/hash-phone)|
 |위장|Level 2|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Hash/Disguise.java)|[풀이](https://velog.io/@jwkim/hash-disguise)|
 |베스트앨범|Level 3|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Hash/BestAlbum.java)|[풀이](https://velog.io/@jwkim/hash-best-album)|
+
+### [Stack & Queue](https://programmers.co.kr/learn/courses/30/parts/12081)
+
+|문제이름|레벨|코드|풀이|
+|--|--|--|--|
+|기능개발|Level 2|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Stack%20%26%20Queue/FunctionDevelopment.java)|[풀이](https://velog.io/@jwkim/queue-function-development)|
