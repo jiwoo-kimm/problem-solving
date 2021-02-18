@@ -41,6 +41,12 @@
 |--|--|--|--|
 |스킬트리|Level 2|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Summer-Winter%20Coding(~2018)/SkillTree.java)|[풀이](https://velog.io/@jwkim/skill-tree)|
 
+### Summer/Winter Coding(2019)
+
+|문제이름|레벨|코드|풀이|
+|--|--|--|--|
+|멀쩡한 사각형|Level 2|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Summer-Winter%20Coding(2019)/Square.java)|[풀이](https://velog.io/@jwkim/square)|
+
 ### Practice
 
 |문제이름|레벨|코드|풀이|
