@@ -51,7 +51,7 @@
 
 |문제이름|레벨|코드|풀이|
 |--|--|--|--|
-|삼각달팽이|Level 2|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Montly%20Code%20Challenge/Snail.java)|[풀이](https://velog.io/@jwkim/snail)|
+|삼각달팽이|Level 2|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Monthly%20Code%20Challenge/Snail.java)|[풀이](https://velog.io/@jwkim/snail)|
 
 ### Practice
 
