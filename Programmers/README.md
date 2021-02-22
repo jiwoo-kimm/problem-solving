@@ -58,3 +58,4 @@
 |문제이름|레벨|코드|풀이|
 |--|--|--|--|
 |124 나라의 숫자|Level 2|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Practice/World124.java)|[풀이](https://velog.io/@jwkim/world-124)|
+|2xn 타일링|Level 3|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Practice/Tile.java)|[풀이](https://velog.io/@jwkim/2xn-tile)|
