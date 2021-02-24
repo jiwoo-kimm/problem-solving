@@ -17,11 +17,11 @@
 |입국심사|Level 3|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Binary%20Search/Immigration.java)|[풀이](https://velog.io/@jwkim/binary-search-immigration)|
 |징검다리|Level 4|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Binary%20Search/StepStones.java)|[풀이](https://velog.io/@jwkim/binary-search-step-stones)|
 
-### [Greedy](https://programmers.co.kr/learn/courses/30/parts/12230)
+### [Brute-Force](https://programmers.co.kr/learn/courses/30/parts/12230)
 
 |문제이름|레벨|코드|풀이|
 |--|--|--|--|
-|소수 찾기|Level 2|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Greedy/PrimeNumber.java)|[풀이](https://velog.io/@jwkim/greedy-prime-number)|
+|소수 찾기|Level 2|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Brute-Force/PrimeNumber.java)|[풀이](https://velog.io/@jwkim/greedy-prime-number)|
 
 ### [Hash](https://programmers.co.kr/learn/courses/30/parts/12077)
 
