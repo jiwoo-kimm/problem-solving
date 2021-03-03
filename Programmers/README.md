@@ -22,6 +22,7 @@
 |문제이름|레벨|코드|풀이|
 |--|--|--|--|
 |소수 찾기|Level 2|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Brute-Force/PrimeNumber.java)|[풀이](https://velog.io/@jwkim/brute-force-prime-number)|
+|카펫|Level 2|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Brute-Force/Carpet.java)|[풀이](https://velog.io/@jwkim/brute-force-carpet)|
 
 ### [Hash](https://programmers.co.kr/learn/courses/30/parts/12077)
 
