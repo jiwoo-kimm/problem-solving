@@ -22,7 +22,7 @@ class Solution {
         Map<String, Integer> subset1 = getSubset(str1);
         Map<String, Integer> subset2 = getSubset(str2);
         if (subset1.size() == 0 && subset2.size() == 0) return 1;
-        calcCounts(subset1, subset2);
+        compareSubsets(subset1, subset2);
         return (double) intersectionCount / sumOfUnionCounts();
     }
     
@@ -45,7 +45,7 @@ class Solution {
         return ch >= 'A' && ch <= 'Z';
     }
 
-    private void calcCounts(Map<String, Integer> subset1, Map<String, Integer> subset2) {
+    private void compareSubsets(Map<String, Integer> subset1, Map<String, Integer> subset2) {
         for (String key1 : subset1.keySet()) {
             for (String key2 : subset2.keySet()) {
                 if (key1.equals(key2)) {
