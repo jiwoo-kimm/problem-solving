@@ -76,16 +76,7 @@ class FileName {
         this.head = head;
         this.number = number;
         this.tail = tail;
-        this.numberValue = parseNumberValue(number);
-    }
-
-    private int parseNumberValue(String str) {
-        int value = 0, digit = 1;
-        for (int i = str.length() - 1; i >= 0; i--) {
-            value += Integer.parseInt(str.charAt(i) + "") * digit;
-            digit *= 10;
-        }
-        return value;
+        this.numberValue = Integer.parseInt(number);
     }
 
     public String fileName() {
