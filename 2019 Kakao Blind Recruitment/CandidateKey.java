@@ -74,7 +74,6 @@ class Key {
 
     public Key(List<Integer> attributes) {
         this.attributes = attributes;
-        attributes.sort(Integer::compareTo);
     }
 
     public boolean contains(Key target) {
