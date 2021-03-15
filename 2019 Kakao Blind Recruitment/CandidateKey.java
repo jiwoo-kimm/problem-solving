@@ -37,7 +37,7 @@ class Solution {
         for (int i = start; i < colCount; i++) {
             if (!visited[i]) {
                 visited[i] = true;
-                result[depth] = i + 1;
+                result[depth] = i;
                 dfs(result, visited, i + 1, depth + 1, targetLength);
                 visited[i] = false;
                 result[depth] = 0;
@@ -53,7 +53,7 @@ class Solution {
         Set<String> rows = new HashSet<>();
         for (int i = 0; i < table.length; i++) {
             String current = "";
-            for (int attribute : key.attributes) current += table[i][attribute - 1];
+            for (int attribute : key.attributes) current += table[i][attribute];
             if (rows.contains(current)) return false;
             rows.add(current);
         }
@@ -69,6 +69,7 @@ class Solution {
 
 
 class Key {
+    
     List<Integer> attributes;
 
     public Key(List<Integer> attributes) {
