@@ -10,11 +10,11 @@ class Solution {
         Arrays.sort(citations);
         int answer = 0;
         for (int citation : citations)
-            answer = Math.max(Math.min(countLessThan(citation, citations), citation), answer);
+            answer = Math.max(Math.min(countLargerThan(citation, citations), citation), answer);
         return answer;
     }
 
-    private int countLessThan(int target, int[] citations) {
+    private int countLargerThan(int target, int[] citations) {
         int count = 0;
         for (int citation : citations)
             if (citation >= target) count++;
