@@ -4,8 +4,8 @@
 
 |문제이름|레벨|코드|풀이|
 |--|--|--|--|
-|가장 큰 수|Level 2|[코드]()|[풀이](https://velog.io/@jwkim/sorting-maximum)|
-|H-Index|Level 2|[코드]()|[풀이](https://velog.io/@jwkim/sorting-h-index)|
+|가장 큰 수|Level 2|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Sorting/Maximum.java)|[풀이](https://velog.io/@jwkim/sorting-maximum)|
+|H-Index|Level 2|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Sorting/HIndex.java)|[풀이](https://velog.io/@jwkim/sorting-h-index)|
 
 ### [DFS & BFS](https://programmers.co.kr/learn/courses/30/parts/12421)
 
