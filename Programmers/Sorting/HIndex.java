@@ -7,8 +7,7 @@ import java.util.*;
 class Solution {
     
     public int solution(int[] citations) {
-        Arrays.sort(citations);
-        int answer = 0;
+    	int answer = 0;
         for (int citation : citations)
             answer = Math.max(Math.min(countLargerThan(citation, citations), citation), answer);
         return answer;
