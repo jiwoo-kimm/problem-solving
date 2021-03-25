@@ -1,18 +1,22 @@
 // 2021 카카오 블라인드 채용
 // 순위 검색
-// 2021.03.24
+// 2021.03.24-25
 
 import java.util.*;
 
-class Solution {    
+class Solution {
     
+    private static final String BLANK = " ";
+    private static final String NULL = "";
+
     private static final int LANGUAGE = 0;
     private static final int POSITION = 1;
     private static final int CAREER = 2;
     private static final int SOUL_FOOD = 3;
     private static final int TEST_SCORE = 4;
+    private static final int CONDITION_COUNT = 4;
 
-    private Set<Applicant> applicants = new HashSet<>();
+    private Map<String, List<Integer>> testScoresPerCondition = new HashMap<>();
     private List<Integer> queryResults = new ArrayList<>();
 
     public int[] solution(String[] infos, String[] queries) {
@@ -23,82 +27,83 @@ class Solution {
 
     private void parseApplicantsInfo(String[] infos) {
         for (String info : infos) {
-            String[] chunks = info.split(" ");
-            applicants.add(new Applicant(new Condition(
-                    chunks[LANGUAGE], chunks[POSITION], chunks[CAREER],
-                    chunks[SOUL_FOOD], Integer.parseInt(chunks[TEST_SCORE]))));
+            String[] chunks = info.split(BLANK);
+            int testScore = Integer.parseInt(chunks[TEST_SCORE]);
+            List<String> conditions = getCombinationOfInfo(chunks);
+            for (String condition : conditions) addInfo(condition, testScore);
+        }
+        for (List<Integer> applicants : testScoresPerCondition.values()) applicants.sort(Integer::compareTo);
+    }
+
+    private List<String> getCombinationOfInfo(String[] chunks) {
+        List<String> result = new ArrayList<>();
+        for (int i = 0; i <= CONDITION_COUNT; i++)
+            dfs(new String[i], new boolean[CONDITION_COUNT], 0, 0, i, result, chunks);
+        return result;
+    }
+
+    private void dfs(String[] tmp, boolean[] visited, int start, int depth, int targetLength, List<String> result, String[] chunks) {
+        if (depth == targetLength) {
+            result.add(createConditionString(tmp));
+            return;
+        }
+
+        for (int i = start; i < CONDITION_COUNT; i++) {
+            if (!visited[i]) {
+                visited[i] = true;
+                tmp[depth] = chunks[i];
+                dfs(tmp, visited, i + 1, depth + 1, targetLength, result, chunks);
+                visited[i] = false;
+                tmp[depth] = BLANK;
+            }
+        }
+    }
+
+    private String createConditionString(String[] tmp) {
+        StringBuilder sb = new StringBuilder();
+        for (String str : tmp) sb.append(str);
+        return sb.toString().strip();
+    }
+
+    private void addInfo(String condition, int testScore) {
+        if (testScoresPerCondition.containsKey(condition)) {
+            testScoresPerCondition.get(condition).add(testScore);
+        } else {
+            List<Integer> testScores = new ArrayList<>();
+            testScores.add(testScore);
+            testScoresPerCondition.put(condition, testScores);
         }
     }
 
     private void queryForResults(String[] queries) {
         for (String query : queries) {
-            Condition condition = parseQueryToCondition(query);
-            queryResults.add((int) applicants.stream()
-                    .filter(applicant -> applicant.meetsCondition(condition))
-                    .count());
+            int testScore = parseTestScore(query);
+            String condition = parseQueryIntoConditionString(query.replace(Integer.toString(testScore), NULL));
+            if (!testScoresPerCondition.containsKey(condition))
+                queryResults.add(0);
+            else
+                queryResults.add(countAvailableApplicants(testScoresPerCondition.get(condition), testScore));
         }
     }
 
-    private Condition parseQueryToCondition(String query) {
-        String[] conditions = query.split("and");
-        int testScore = parseTestScore(conditions[SOUL_FOOD].strip().split(" ")[1]);
-        String soulFood = conditions[SOUL_FOOD].strip().split(" ")[0];
-        return new Condition(conditions[LANGUAGE].strip(), conditions[POSITION].strip(),
-                conditions[CAREER].strip(), soulFood.strip(), testScore);
+    private int parseTestScore(String query) {
+        String[] chunks = query.split(BLANK);
+        return Integer.parseInt(chunks[chunks.length - 1]);
     }
 
-    private int parseTestScore(String str) {
-        if (str.equals(Condition.NULL)) return Condition.NO_TEST_SCORE;
-        else return Integer.parseInt(str);
-    }
-}
-
-class Applicant {
-    Condition condition;
-
-    public Applicant(Condition condition) {
-        this.condition = condition;
+    private String parseQueryIntoConditionString(String query) {
+        String[] chunks = query.replace("-", NULL).split("and");
+        return chunks[LANGUAGE].strip() + chunks[POSITION].strip()
+                + chunks[CAREER].strip() + chunks[SOUL_FOOD].strip();
     }
 
-    public boolean meetsCondition(Condition condition) {
-        return this.condition.equals(condition);
-    }
-}
-
-class Condition {
-
-    static final int NO_TEST_SCORE = -1;
-    static final String NULL = "-";
-
-    String language;
-    String position;
-    String career;
-    String soulFood;
-    int testScore;
-
-    public Condition(String language, String position, String career, String soulFood, int testScore) {
-        this.language = language;
-        this.position = position;
-        this.career = career;
-        this.soulFood = soulFood;
-        this.testScore = testScore;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Condition)) return false;
-        Condition target = (Condition) o;
-        if (target.testScore != NO_TEST_SCORE && this.testScore < target.testScore) return false;
-        if (!target.language.equals(NULL) && !this.language.equals(target.language)) return false;
-        if (!target.position.equals(NULL) && !this.position.equals(target.position)) return false;
-        if (!target.career.equals(NULL) && !this.career.equals(target.career)) return false;
-        if (!target.soulFood.equals(NULL) && !this.soulFood.equals(target.soulFood)) return false;
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(language, position, career, soulFood, testScore);
+    private int countAvailableApplicants(List<Integer> applicants, int testScore) {
+        int left = 0, right = applicants.size() - 1, mid;
+        while (left <= right) {
+            mid = (left + right) / 2;
+            if (applicants.get(mid) < testScore) left = mid + 1;
+            else right = mid - 1;
+        }
+        return applicants.size() - left;
     }
 }
