@@ -24,6 +24,12 @@
 |입국심사|Level 3|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Binary%20Search/Immigration.java)|[풀이](https://velog.io/@jwkim/binary-search-immigration)|
 |징검다리|Level 4|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Binary%20Search/StepStones.java)|[풀이](https://velog.io/@jwkim/binary-search-step-stones)|
 
+### [Greedy](https://programmers.co.kr/learn/courses/30/parts/12244)
+
+|문제이름|레벨|코드|풀이|
+|--|--|--|--|
+|체육복|Level 1|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Greedy/GymSuit.java)|[풀이](https://velog.io/@jwkim/greedy-gym-suit)|
+
 ### [Brute-Force](https://programmers.co.kr/learn/courses/30/parts/12230)
 
 |문제이름|레벨|코드|풀이|
