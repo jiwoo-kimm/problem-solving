@@ -29,6 +29,7 @@
 |문제이름|레벨|코드|풀이|
 |--|--|--|--|
 |체육복|Level 1|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Greedy/GymSuit.java)|[풀이](https://velog.io/@jwkim/greedy-gym-suit)|
+|조이스틱|Level 2|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Greedy/JoyStick.java)|[풀이](https://velog.io/@jwkim/greedy-joy-stick)|
 
 ### [Brute-Force](https://programmers.co.kr/learn/courses/30/parts/12230)
 
