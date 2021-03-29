@@ -68,11 +68,12 @@
 |--|--|--|--|
 |멀쩡한 사각형|Level 2|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Summer-Winter%20Coding(2019)/Square.java)|[풀이](https://velog.io/@jwkim/square)|
 
-### 월간 코드 챌린지
+### 월간 코드 챌린지 시즌 1
 
 |문제이름|레벨|코드|풀이|
 |--|--|--|--|
 |삼각달팽이|Level 2|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Monthly%20Code%20Challenge/Snail.java)|[풀이](https://velog.io/@jwkim/snail)|
+|두 개 뽑아서 더하기|Level 1|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Monthly%20Code%20Challenge/SumOfTwoElements.java)|[풀이](https://velog.io/@jwkim/montly-code-challenge-sum-of-two-elements)|
 
 ### Practice
 
