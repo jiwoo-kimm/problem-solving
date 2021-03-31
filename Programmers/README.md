@@ -31,6 +31,7 @@
 |체육복|Level 1|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Greedy/GymSuit.java)|[풀이](https://velog.io/@jwkim/greedy-gym-suit)|
 |조이스틱|Level 2|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Greedy/JoyStick.java)|[풀이](https://velog.io/@jwkim/greedy-joy-stick)|
 |큰 수 만들기|Level 2|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Greedy/MaxNum.java)|[풀이](https://velog.io/@jwkim/greedy-max-num)|
+|구명보트|Level 2|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Greedy/Lifeboat.java)|[풀이](https://velog.io/@jwkim/greedy-lifeboat)|
 
 ### [Brute-Force](https://programmers.co.kr/learn/courses/30/parts/12230)
 
