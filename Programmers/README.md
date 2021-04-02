@@ -33,6 +33,7 @@
 |큰 수 만들기|Level 2|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Greedy/MaxNum.java)|[풀이](https://velog.io/@jwkim/greedy-max-num)|
 |구명보트|Level 2|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Greedy/Lifeboat.java)|[풀이](https://velog.io/@jwkim/greedy-lifeboat)|
 |섬 연결하기|Level 3|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Greedy/Island.java)|[풀이](https://velog.io/@jwkim/greedy-island)|
+|단속카메라|Level 3|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Greedy/CCTV.java)|[풀이](https://velog.io/@jwkim/greedy-cctv)|
 
 ### [Brute-Force](https://programmers.co.kr/learn/courses/30/parts/12230)
 
