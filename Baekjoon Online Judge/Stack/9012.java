@@ -1,60 +1,62 @@
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.util.Arrays;
-import java.util.Stack;
-import java.util.StringTokenizer;
-
-// 백준 9012 '괄호'
+// 백준 9012 Parenthesis
 // Stack
-// 2020.07.28
+// 2021.04.06
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
 
 public class Main {
-	public static void main(String[] args) throws IOException {
 
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+    private static BufferedReader br;
+    private static BufferedWriter bw;
 
-		StringTokenizer tk = new StringTokenizer(br.readLine());
-		int N = Integer.parseInt(tk.nextToken());
+    private static int T;
+    private static List<String> lines = new ArrayList<>();
 
-		Stack<Character> stack;
-		String ps;
-		char input, cmp;
-		boolean flag;
-		for (int i = 0; i < N; i++) {
-			tk = new StringTokenizer(br.readLine());
-			ps = tk.nextToken();
-			stack = new Stack<Character>();
-			flag = true;
+    private static List<String> answers = new ArrayList<>();
 
-			for (int j = 0; j < ps.length() && flag; j++) {
-				input = ps.charAt(j); 
-				switch (input) {
-				case '(':
-					stack.push(input);
-					break;
-				case ')':
-					if (stack.isEmpty()) {
-						flag = false;
-					} else {
-						cmp = stack.pop();
-						if (cmp != '(')
-							flag = false;
-					}
-					break;
-				}
-			}
+    public static void main(String[] args) throws IOException {
 
-			if (flag && stack.isEmpty())
-				bw.write("YES\n");
-			else
-				bw.write("NO\n");
-		}
+        br = new BufferedReader(new InputStreamReader(System.in));
+        bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-		br.close();
-		bw.close();
-	}
+        parseInputAndInitParams();
+        verifyLinesVPS();
+        writeAnswers();
+
+        br.close();
+        bw.close();
+    }
+
+    private static void parseInputAndInitParams() throws IOException {
+        T = Integer.parseInt(br.readLine());
+        for (int i = 0; i < T; i++) lines.add(br.readLine());
+    }
+
+    private static void verifyLinesVPS() {
+        for (String line : lines)
+            if (isVPS(line)) answers.add("YES");
+            else answers.add("NO");
+    }
+
+    private static boolean isVPS(String line) {
+        Stack<Character> stack = new Stack<>();
+        for (char current : line.toCharArray()) {
+            if (current == '(') {
+                stack.push(current);
+            } else if (current == ')') {
+                if (stack.isEmpty()) return false;
+                if (stack.peek() != '(') return false;
+                stack.pop();
+            }
+        }
+        return stack.isEmpty();
+    }
+
+    private static void writeAnswers() throws IOException {
+        for (String answer : answers)
+            bw.append(answer).append("\n");
+    }
 }
