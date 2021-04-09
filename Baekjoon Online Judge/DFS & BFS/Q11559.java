@@ -1,3 +1,7 @@
+// 백준 11559번 뿌요뿌요
+// DFS
+// 2021.04.09
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +22,7 @@ public class Q11559 {
 
     private static char[][] board = new char[HEIGHT][WIDTH];
     private static boolean[][] pop = new boolean[HEIGHT][WIDTH];
+    private static boolean isPopAvailable;
 
     public static void main(String[] args) throws IOException {
         br = new BufferedReader(new InputStreamReader(System.in));
@@ -50,31 +55,32 @@ public class Q11559 {
     }
 
     private static boolean isPopAvailable() {
-        int popCount = 0;
+        isPopAvailable = false;
         for (int i = 0; i < HEIGHT; i++)
             for (int j = 0; j < WIDTH; j++) {
                 List<Index> indexes = new ArrayList<>();
                 indexes.add(new Index(i, j));
-                if (board[i][j] != BLANK && !pop[i][j] && checkBlocksToPop(i, j, indexes)) popCount++;
+                if (board[i][j] != BLANK && !pop[i][j])
+                    checkBlocksToPop(i, j, indexes);
             }
-        return popCount != 0;
+        return isPopAvailable;
     }
 
-    private static boolean checkBlocksToPop(int y, int x, List<Index> indexes) {
+    private static void checkBlocksToPop(int y, int x, List<Index> indexes) {
         if (indexes.size() >= POP) {
             for (Index index : indexes) pop[index.y][index.x] = true;
-            return true;
+            isPopAvailable = true;
         }
+
         char targetChar = board[y][x];
         for (int i = 0; i < dy.length; i++) {
             int ny = y + dy[i];
             int nx = x + dx[i];
             if (isInBound(ny, nx) && board[ny][nx] == targetChar && !indexes.contains(new Index(ny, nx))) {
                 indexes.add(new Index(ny, nx));
-                return checkBlocksToPop(ny, nx, indexes);
+                checkBlocksToPop(ny, nx, indexes);
             }
         }
-        return indexes.size() >= POP;
     }
 
     private static boolean isInBound(int ny, int nx) {
