@@ -1,61 +1,48 @@
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.util.StringTokenizer;
-
-// 백준 1149 'RGB거리`
+// 백준 1149번 RGB거리
 // DP
-// 2020.07.18
+// 2020.07.18, 2021.04.14
+
+import java.io.*;
 
 public class Main {
 
-	static int N;
-	static int cost[][];
-	static int minCost[][];
-	static int rgb[];
+    private static final int MAXIMUM = 1000;
+    private static final int RED = 0;
+    private static final int GREEN = 1;
+    private static final int BLUE = 2;
+    private static final int COLORS = 3;
 
-	static final int MAX_N = 1010;
+    private static int n;
+    private static int[][] costs = new int[MAXIMUM + 1][COLORS];
+    private static int[][] dp = new int[MAXIMUM + 1][COLORS];
 
-	static final int R = 0;
-	static final int G = 1;
-	static final int B = 2;
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        n = Integer.parseInt(br.readLine());
+        for (int i = 1; i <= n; i++) {
+            String[] chunks = br.readLine().split(" ");
+            costs[i][RED] = Integer.parseInt(chunks[RED]);
+            costs[i][GREEN] = Integer.parseInt(chunks[GREEN]);
+            costs[i][BLUE] = Integer.parseInt(chunks[BLUE]);
+        }
 
-		StringTokenizer tk = new StringTokenizer(br.readLine());
+        dp();
+        bw.append(String.valueOf(Math.min(Math.min(dp[n][RED], dp[n][GREEN]), dp[n][BLUE])));
 
-		N = Integer.parseInt(tk.nextToken());
-		cost = new int[MAX_N][3];
+        br.close();
+        bw.close();
+    }
 
-		int n;
-		tk = new StringTokenizer(br.readLine());
-		for (int j = 0; j < 3; j++) {
-			n = Integer.parseInt(tk.nextToken());
-			cost[1][j] = n;
-		}
-
-		for (int i = 2; i < N + 1; i++) {
-			tk = new StringTokenizer(br.readLine());
-			for (int j = 0; j < 3; j++) {
-				n = Integer.parseInt(tk.nextToken());
-				cost[i][j] = n;
-			}
-		}
-
-		for (int i = 2; i < N + 1; i++) {
-			cost[i][R] += Math.min(cost[i - 1][G], cost[i - 1][B]);
-			cost[i][G] += Math.min(cost[i - 1][R], cost[i - 1][B]);
-			cost[i][B] += Math.min(cost[i - 1][R], cost[i - 1][G]);
-		}
-
-		int res = Math.min(Math.min(cost[N][R], cost[N][G]), cost[N][B]);
-		bw.write(Integer.toString(res));
-
-		br.close();
-		bw.close();
-	}
+    private static void dp() {
+        dp[1][RED] = costs[1][RED];
+        dp[1][GREEN] = costs[1][GREEN];
+        dp[1][BLUE] = costs[1][BLUE];
+        for (int i = 2; i <= n; i++) {
+            dp[i][RED] = costs[i][RED] + Math.min(dp[i - 1][GREEN], dp[i - 1][BLUE]);
+            dp[i][GREEN] = costs[i][GREEN] + Math.min(dp[i - 1][RED], dp[i - 1][BLUE]);
+            dp[i][BLUE] = costs[i][BLUE] + Math.min(dp[i - 1][RED], dp[i - 1][GREEN]);
+        }
+    }
 }
