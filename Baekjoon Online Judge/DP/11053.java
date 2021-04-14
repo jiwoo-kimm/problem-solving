@@ -1,47 +1,45 @@
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.util.StringTokenizer;
-
-// πÈ¡ÿ 11053 '∞°¿Â ±‰ ¡ı∞°«œ¥¬ ∫Œ∫– ºˆø≠'
+// Î∞±Ï§Ä 11053Î≤à Í∞ÄÏû• Í∏¥ Ï¶ùÍ∞ÄÌïòÎäî ÏàòÏó¥
 // DP
-// 2020.07.22
+// 2020.07.22, 2021.04.14
+
+import java.io.*;
 
 public class Main {
 
-	static int N;
-	static int arr[];
-	static int count[];
-	static int res;
+    private static final int MAXIMUM = 1000;
 
-	public static void main(String[] args) throws IOException {
+    private static int n;
+    private static int[] arr = new int[MAXIMUM + 1];
+    private static int[] dp = new int[MAXIMUM + 1];
 
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-		StringTokenizer tk = new StringTokenizer(br.readLine());
+        n = Integer.parseInt(br.readLine());
+        String[] line = br.readLine().split(" ");
+        for (int i = 1; i <= n; i++) arr[i] = Integer.parseInt(line[i - 1]);
 
-		N = Integer.parseInt(tk.nextToken());
-		arr = new int[N];
-		count = new int[N];
+        dp();
+        bw.append(String.valueOf(getMax()));
 
-		tk = new StringTokenizer(br.readLine());
-		for (int i = 0; i < N; i++) {
-			arr[i] = Integer.parseInt(tk.nextToken());
-			count[i] = 1;
-			for (int j = 0; j < i; j++) {
-				if (arr[i] > arr[j] && count[j] + 1 > count[i])
-					count[i] = count[j] + 1;
-			}
-			if (count[i] > res)
-				res = count[i];
-		}
+        br.close();
+        bw.close();
+    }
 
-		bw.write(Integer.toString(res));
+    private static void dp() {
+        dp[1] = 1;
+        for (int i = 2; i <= n; i++) {
+            int max = 0;
+            for (int j = i - 1; j >= 1; j--)
+                if (arr[i] > arr[j]) max = Math.max(max, dp[j]);
+            dp[i] = max + 1;
+        }
+    }
 
-		br.close();
-		bw.close();
-	}
+    private static int getMax() {
+        int max = 0;
+        for (int val : dp) max = Math.max(max, val);
+        return max;
+    }
 }
