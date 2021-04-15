@@ -1,55 +1,42 @@
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.util.StringTokenizer;
-
-// 백준 10844 '쉬운 계단 수'
+// 백준 10844번 쉬운 계단 수
 // DP
-// 2020.07.21
+// 2020.07.21, 2021.04.15
+
+import java.io.*;
 
 public class Main {
 
-	static int N;
-	static long count[][];
-	static final int mod = 1000000000;
+    private static final int MAXIMUM = 100;
+    private static final int MOD = 1000000000;
+    private static final int NUMBERS = 10;
 
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+    private static int n;
+    private static long[][] dp = new long[MAXIMUM + 1][NUMBERS];
 
-		StringTokenizer tk = new StringTokenizer(br.readLine());
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-		N = Integer.parseInt(tk.nextToken());
-		count = new long[101][10];
+        n = Integer.parseInt(br.readLine());
+        dp();
+        bw.append(String.valueOf(sum(dp[n])));
 
-		count[1][0] = 0;
-		for (int i = 1; i < 10; i++) {
-			count[1][i] = 1;
-		}
+        br.close();
+        bw.close();
+    }
 
-		for (int i = 2; i < N + 1; i++) {
-			for (int j = 0; j < 10; j++) {
-				if (j == 0)
-					count[i][j] = count[i - 1][1];
-				else if (j == 9)
-					count[i][j] = count[i - 1][8];
-				else
-					count[i][j] = count[i - 1][j - 1] + count[i - 1][j + 1];
-				count[i][j] %= mod;
-			}
-		}
+    private static void dp() {
+        for (int i = 1; i < NUMBERS; i++) dp[1][i] = 1;
+        for (int i = 2; i <= n; i++)
+            for (int j = 0; j < NUMBERS; j++)
+                if (j == 0) dp[i][j] = dp[i - 1][j + 1];
+                else if (j == 9) dp[i][j] = dp[i - 1][j - 1];
+                else dp[i][j] = (dp[i - 1][j - 1] + dp[i - 1][j + 1]) % MOD;
+    }
 
-		long res = 0;
-		for (int i = 0; i < 10; i++) {
-			res += count[N][i];
-			res %= mod;
-		}
-
-		bw.write(Long.toString(res));
-
-		br.close();
-		bw.close();
-	}
+    private static long sum(long[] arr) {
+        long sum = 0;
+        for (long num : arr) sum = (sum + num) % MOD;
+        return sum;
+    }
 }
