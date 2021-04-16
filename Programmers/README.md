@@ -65,6 +65,7 @@
 |문제이름|레벨|코드|풀이|
 |--|--|--|--|
 |등굣길|Level 3|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/DP/School.java)|[풀이](https://velog.io/@jwkim/dp-school)|
+|도둑질|Level 4|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/DP/Thief.java)|[풀이](https://velog.io/@jwkim/dp-thief)|
 
 ### Summer/Winter Coding(~2018)
 
