@@ -30,7 +30,7 @@
 1655 1927 11279 11286
 
 ### [Binary Search](./Binary%20Search)
-1300 1654 1920 2110 2805 10816 [12015](https://velog.io/@jwkim/bs-12015) [13397](https://velog.io/@jwkim/binary-search-13397)
+1300 1654 1920 2110 2805 10816 [12015](https://velog.io/@jwkim/bs-12015) [13397](https://velog.io/@jwkim/binary-search-13397) [14003](https://velog.io/@jwkim/bs-14003)
 
 ### [Brute Force](./Brute%20Force)
 1018 1436 2231 2798 7568
