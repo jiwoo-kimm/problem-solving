@@ -1,86 +1,51 @@
 // 백준 12015 '가장 긴 증가하는 부분 수열 2'
 // Binary Search
-// 2020.08.13
+// 2020.08.13, 2021.04.21
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.StringTokenizer;
+import java.util.List;
 
 public class Main {
 
-    static BufferedReader br;
-    static BufferedWriter bw;
-
-    static int N;
-    static int[] A;
-
-    static int newNum;
-    static int newNumPosition;
-    static ArrayList<Integer> listLIS;
+    private static int n;
+    private static int[] arr;
 
     public static void main(String[] args) throws IOException {
-        br = new BufferedReader(new InputStreamReader(System.in));
-        bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        getInputs();
-        initListLIS();
-        findLIS();
-        writeAnswer();
+        parseInput(br);
+        int answer = findLISLength();
+        bw.append(String.valueOf(answer));
 
         br.close();
         bw.close();
     }
 
-    private static void getInputs() throws IOException {
-        StringTokenizer tk = new StringTokenizer(br.readLine());
-        N = Integer.parseInt(tk.nextToken());
-        A = new int[N];
-        tk = new StringTokenizer(br.readLine());
-        for (int i = 0; i < N; i++) {
-            A[i] = Integer.parseInt(tk.nextToken());
+    private static void parseInput(BufferedReader br) throws IOException {
+        n = Integer.parseInt(br.readLine());
+        arr = new int[n];
+        String[] line = br.readLine().split(" ");
+        for (int i = 0; i < n; i++) arr[i] = Integer.parseInt(line[i]);
+    }
+
+    private static int findLISLength() {
+        List<Integer> lis = new ArrayList<>();
+        lis.add(0);
+        for (int i = 0; i < n; i++)
+            if (arr[i] > lis.get(lis.size() - 1)) lis.add(arr[i]);
+            else lis.set(findIndex(lis, arr[i]), arr[i]);
+        return lis.size() - 1;
+    }
+
+    private static int findIndex(List<Integer> lis, int current) {
+        int left = 0, right = lis.size() - 1, mid;
+        while (left < right) {
+            mid = (left + right) / 2;
+            if (current > lis.get(mid)) left = mid + 1;
+            else right = mid;
         }
-    }
-
-    private static void initListLIS() {
-        listLIS = new ArrayList<>();
-        listLIS.add(0);
-    }
-
-    private static void findLIS() {
-        for (int i = 0; i < N; i++) {
-            newNum = A[i];
-            if (newNum > getLastNumberOfLIS())
-                listLIS.add(newNum);
-            else {
-                findPositionOfNewNum();
-                listLIS.set(newNumPosition, newNum);
-            }
-        }
-    }
-
-    private static int getLastNumberOfLIS() {
-        return listLIS.get(listLIS.size() - 1);
-    }
-
-    private static void findPositionOfNewNum() {
-        binarySearch(0, listLIS.size() - 1);
-    }
-
-    private static void binarySearch(int startIndex, int endIndex) {
-        if (startIndex > endIndex) {
-            newNumPosition = startIndex;
-            return;
-        }
-
-        int midIndex = (startIndex + endIndex) / 2;
-
-        if (listLIS.get(midIndex) >= newNum)
-            binarySearch(startIndex, midIndex - 1);
-        else
-            binarySearch(midIndex + 1, endIndex);
-    }
-
-    private static void writeAnswer() throws IOException {
-        bw.write(Integer.toString(listLIS.size() - 1));
+        return (left + right) / 2;
     }
 }
