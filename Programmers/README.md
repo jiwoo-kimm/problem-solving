@@ -17,7 +17,7 @@
 |여행 경로|Level 3|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/DFS%20%26%20BFS/TravelRoute.java)|[풀이](https://velog.io/@jwkim/DFS-travel-route)|
 |N으로 표현|Level 3|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/DFS%20%26%20BFS/NExpression.java)|[풀이](https://velog.io/@jwkim/DFS-n-expression)|
 
-### [DFS & BFS](https://programmers.co.kr/learn/courses/30/parts/12421)
+### [Graph](https://programmers.co.kr/learn/courses/30/parts/14393)
 
 |문제이름|레벨|코드|풀이|
 |--|--|--|--|
