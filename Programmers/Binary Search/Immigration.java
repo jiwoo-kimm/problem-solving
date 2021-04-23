@@ -1,38 +1,32 @@
 // 프로그래머스 '입국심사'
 // 이분탐색
-// 2021.01.13
+// 2021.01.13, 2021.04.23
 
-import java.util.Arrays;
-
-public class Immigration {
-
-    public static void main(String[] args) {
-        System.out.println(solution(6, new int[]{7, 10}));
-    }
-
-    public static long solution(int n, int[] times) {
-        Arrays.sort(times);
-        long left = 1;
-        long right = (long) n * times[times.length - 1];
-
-        long answer = 0;
-        while (left <= right) {
-            long mid = (left + right) / 2;
-            long maxPeopleCount = getPeopleCount(mid, times);
-
-            if (maxPeopleCount < n) {
-                left = mid + 1;
-            } else {
-                right = mid - 1;
-                answer = mid;
-            }
+class Solution {
+    
+    private static final long MAX_PEOPLE = 1000000000;
+    private static final long MAX_TIME = 1000000000;
+    private static final long MAX_TOTAL = MAX_PEOPLE * MAX_TIME;
+    
+    private int n;
+    private int[] times;
+    
+    public long solution(int n, int[] times) {
+        this.n = n;
+        this.times = times;
+        
+        long left = 1, right = MAX_TOTAL, mid;
+        while (left < right) {
+            mid = (left + right) / 2;
+            if (isAvailable(mid)) right = mid;
+            else left = mid + 1;
         }
-        return answer;
+        return (left + right) / 2;
     }
-
-    private static long getPeopleCount(long mid, int[] times) {
-        long count = 0;
-        for (int time : times) count += mid / time;
-        return count;
+    
+    private boolean isAvailable(long totalTime) {
+        long finished = 0;
+        for (int time : times) finished += totalTime / time;
+        return finished >= n;
     }
 }
