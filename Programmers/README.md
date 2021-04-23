@@ -22,6 +22,7 @@
 |문제이름|레벨|코드|풀이|
 |--|--|--|--|
 |가장 먼 노드|Level 3|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Graph/FarthestNode.java)|[풀이](https://velog.io/@jwkim/graph-farthest-node)|
+|순위|Level 3|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Graph/Rank.java)|[풀이](https://velog.io/@jwkim/graph-rank)|
 
 
 ### [Binary Search](https://programmers.co.kr/learn/courses/30/parts/12486)
