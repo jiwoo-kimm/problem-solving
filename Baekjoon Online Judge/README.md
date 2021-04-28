@@ -19,7 +19,7 @@
 [1922](https://velog.io/@jwkim/graph-1922)
 
 ### [Tree](./Tree)
-[2042](https://velog.io/@jwkim/tree-2042)
+[2042](https://velog.io/@jwkim/tree-2042) [6549](https://velog.io/@jwkim/tree-6549)
 
 ### [Array](./Array)
 1546 2562 2577 3052 4344 8958 10818
