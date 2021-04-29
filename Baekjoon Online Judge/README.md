@@ -1,7 +1,7 @@
 # 백준 주제별 알고리즘 문제풀이
 
 ### [Binary Search](./Binary%20Search)
-1300 1654 1920 2110 2805 10816 [12015](https://velog.io/@jwkim/bs-12015) [13397](https://velog.io/@jwkim/binary-search-13397) [14003](https://velog.io/@jwkim/bs-14003) [2243](https://velog.io/@jwkim/bs-2243)
+1300 1654 1920 2110 2805 10816 [12015](https://velog.io/@jwkim/bs-12015) [13397](https://velog.io/@jwkim/binary-search-13397) [14003](https://velog.io/@jwkim/bs-14003) [2243](https://velog.io/@jwkim/bs-2243) [1994](https://velog.io/@jwkim/bs-1994)
 
 ### [Brute Force](./Brute%20Force)
 1018 1436 2231 2798 7568
