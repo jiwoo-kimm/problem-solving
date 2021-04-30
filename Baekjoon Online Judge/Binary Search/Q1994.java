@@ -1,3 +1,7 @@
+// 백준 1994번 등차수열
+// Binary Search
+// 2021.04.30
+
 import java.io.*;
 import java.util.Arrays;
 
@@ -38,24 +42,28 @@ public class Main {
     }
 
     private static int dp(int i, int j) {
+        if (i > j) return 0;
+        else if (i == j) return 1;
+
         int result = dp[i][j];
         if (result != INIT) return result;
 
-        int index = findIndex(arr[j] + arr[j] - arr[i], j + 1);
+        int target = 2 * arr[j] - arr[i];
+        int index = findIndex(target, j + 1);
 
         if (index == INVALID) return dp[i][j] = 2;
         else return dp[i][j] = dp(j, index) + 1;
     }
 
     private static int findIndex(int target, int start) {
-        int left = start, right = n, mid;
-        while (left <= right) {
+        int left = start, right = n, mid = (left + right) / 2;
+        while (left < right) {
             mid = (left + right) / 2;
-            if (arr[mid] == target) return mid;
-
             if (arr[mid] < target) left = mid + 1;
             else right = mid - 1;
         }
-        return INVALID;
+        if (left <= n && arr[left] == target) return left;
+        if (arr[mid] == target) return mid;
+        else return INVALID;
     }
 }
