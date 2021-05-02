@@ -1,43 +1,29 @@
-package kakaointern2020;
+// 2020 카카오 인턴십 : 키패드 누르기
+// 2021.05.02
 
-public class Keypad {
-
-    public static void main(String[] args) {
-//        System.out.println(solution(
-//                new int[]{1, 3, 4, 5, 8, 2, 1, 4, 5, 9, 5},
-//                "right"
-//        ));
-        System.out.println(solution(
-                new int[]{7, 0, 8, 2, 8, 3, 1, 5, 7, 6, 2},
-                "left"
-        ));
-        System.out.println(solution(
-                new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 0},
-                "right"
-        ));
-    }
-
+class Solution {
+    
     private static final int ROW = 0;
     private static final int COL = 1;
 
-    private static int[] currentLeft = {3, 0};
-    private static int[] currentRight = {3, 2};
+    private int[] currentLeft = {3, 0};
+    private int[] currentRight = {3, 2};
 
-    public static String solution(int[] numbers, String hand) {
+    public String solution(int[] numbers, String hand) {
         StringBuilder sb = new StringBuilder();
         for (int number : numbers)
             sb.append(push(number, hand));
         return sb.toString();
     }
 
-    private static char push(int number, String handed) {
+    private char push(int number, String handed) {
         int[] target = getPosition(number);
         char hand = whichHand(target, handed);
         moveHandToNumber(target, hand);
         return hand;
     }
 
-    private static char whichHand(int[] target, String handed) {
+    private char whichHand(int[] target, String handed) {
         if (target[COL] == 0) return 'L';
         else if (target[COL] == 2) return 'R';
 
@@ -50,12 +36,12 @@ public class Keypad {
         return hand;
     }
 
-    private static int dist(int[] current, int[] target) {
+    private int dist(int[] current, int[] target) {
         return Math.abs(current[ROW] - target[ROW])
                 + Math.abs(current[COL] - target[COL]);
     }
 
-    private static int[] getPosition(int targetNumber) {
+    private int[] getPosition(int targetNumber) {
         int[] position = new int[2];
         if (targetNumber == 0) {
             position[ROW] = 3;
@@ -73,7 +59,7 @@ public class Keypad {
         return position;
     }
 
-    private static void moveHandToNumber(int[] target, char hand) {
+    private void moveHandToNumber(int[] target, char hand) {
         if (hand == 'L') currentLeft = target;
         else if (hand == 'R') currentRight = target;
     }
