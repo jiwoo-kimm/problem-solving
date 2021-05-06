@@ -1,92 +1,49 @@
-package kakaointern2020;
+// 2020 카카오 인턴 : 보석 쇼핑
+// 2021.05.06
 
 import java.util.*;
-import java.util.stream.Collectors;
 
-public class GemShop {
+class Solution {
+    
+    private int minStart = Integer.MAX_VALUE;
+    private int minSize = Integer.MAX_VALUE;
 
-    public static void main(String[] args) {
-        System.out.println(Arrays.toString(solution(new String[]{
-                "DIA", "EM", "EM", "RUB", "DIA"
-        })));
-        System.out.println(Arrays.toString(solution(new String[]{
-                "DIA", "RUBY", "RUBY", "DIA", "DIA", "EMERALD", "SAPPHIRE", "RUBY"
-        })));
-        System.out.println(Arrays.toString(solution(new String[]{
-                "DIA", "RUBY", "RUBY", "DIA", "DIA", "EMERALD", "SAPPHIRE", "DIA"
-        })));
-        System.out.println(Arrays.toString(solution(new String[]{
-                "AA", "AB", "AC", "AA", "AC"
-        })));
-        System.out.println(Arrays.toString(solution(new String[]{
-                "XYZ", "XYZ", "XYZ"
-        })));
-        System.out.println(Arrays.toString(solution(new String[]{
-                "ZZZ", "YYY", "NNNN", "YYY", "BBB"
-        })));
+    public int[] solution(String[] gems) {
+        Map<String, Integer> bucket = initBucket(gems);
+        findMinSection(gems, bucket);
+        return new int[]{minStart + 1, minStart + minSize};
     }
 
-    private static final int START = 0;
-    private static final int END = 1;
-
-    private static Set<String> targetGems = new HashSet<>();
-    private static int[] answer = new int[2];
-
-    public static int[] solution(String[] gems) {
-        targetGems.addAll(Arrays.stream(gems).collect(Collectors.toList()));
-        findMinSection(gems);
-        return answer;
+    private Map<String, Integer> initBucket(String[] gems) {
+        Map<String, Integer> bucket = new HashMap<>();
+        for (String gem : gems) bucket.putIfAbsent(gem, 0);
+        return bucket;
     }
 
-    private static void findMinSection(String[] gems) {
-        Set<String> types = new HashSet<>();
-        Queue<Gem> queue = new LinkedList<>();
-        for (int i = 0; i < gems.length; i++) {
-            Gem gem = new Gem(gems[i], i + 1);
-            if (!queue.isEmpty())
-                if (queue.peek().name.equals(gem.name))
-                    queue.poll();
-            queue.offer(gem);
-            verifyMinSection(queue);
-
-            types.add(gem.name);
-            if (types.size() == targetGems.size()) {
-                int minLength = answer[END] - answer[START] + 1;
-                int newStart = (queue.isEmpty() ? gem.index : queue.peek().index);
-                int newEnd = gem.index;
-                if (answer[START] == 0 && answer[END] == 0) {
-                    answer[START] = newStart;
-                    answer[END] = newEnd;
-                } else if (newEnd - newStart + 1 < minLength) {
-                    answer[START] = newStart;
-                    answer[END] = newEnd;
+    private void findMinSection(String[] gems, Map<String, Integer> bucket) {
+        int start = 0, end = 1, typeCount = 1;
+        bucket.put(gems[start], 1);
+        while (start < end) {
+            if (typeCount == bucket.size()) {
+                int size = end - start;
+                if (size < minSize) {
+                    minStart = start;
+                    minSize = size;
+                }
+                bucket.put(gems[start], bucket.get(gems[start]) - 1);
+                if (bucket.get(gems[start]) < 1) typeCount--;
+                start++;
+            } else {
+                if (end < gems.length) {
+                    bucket.put(gems[end], bucket.get(gems[end]) + 1);
+                    if (bucket.get(gems[end]) == 1) typeCount++;
+                    end++;
+                } else {
+                    bucket.put(gems[start], bucket.get(gems[start]) - 1);
+                    if (bucket.get(gems[start]) < 1) typeCount--;
+                    start++;
                 }
             }
         }
-    }
-
-    private static void verifyMinSection(Queue<Gem> queue) {
-        if (queue.isEmpty()) return;
-
-        Queue<Gem> tmp = new LinkedList<>(queue);
-        Gem before = tmp.poll();
-        Gem current;
-        while (!tmp.isEmpty()) {
-            current = tmp.poll();
-            if (before.name.equals(current.name)) {
-                queue.poll();
-                before = current;
-            } else return;
-        }
-    }
-}
-
-class Gem {
-    String name;
-    int index;
-
-    public Gem(String name, int index) {
-        this.name = name;
-        this.index = index;
     }
 }
