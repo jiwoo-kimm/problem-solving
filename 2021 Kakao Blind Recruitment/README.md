@@ -6,3 +6,4 @@
 |순위 검색|Level 2|[코드](./Ranking.java)|[풀이](https://velog.io/@jwkim/2021-kakao-blind-ranking)|
 |합승 택시 요금|Level 3|[코드](./Taxi.java)|[풀이](https://velog.io/@jwkim/2021-kakao-blind-taxi)|
 |광고 삽입|Level 3|[코드](./Ad.java)|[풀이](https://velog.io/@jwkim/2021-kakao-blind-ad)|
+|카드 짝 맞추기|Level 3|[코드](./CardSet.java)|[풀이](https://velog.io/@jwkim/2021-kakao-blind-cardset)|
