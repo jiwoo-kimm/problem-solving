@@ -67,6 +67,7 @@
 |주식가격|Level 2|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Stack%20%26%20Queue/Stock.java)|[풀이](https://velog.io/@jwkim/queue-stock-price)|
 |다리를 지나는 트럭|Level 2|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Stack%20%26%20Queue/TruckOnTheBridge.java)|[풀이](https://velog.io/@jwkim/queue-truck-on-the-bridge)|
 |프린터|Level 2|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Stack%20%26%20Queue/Printer.java)|[풀이](https://velog.io/@jwkim/queue-printer)|
+|짝지어 제거하기|Level 2|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Stack%20%26%20Queue/Pair.java)||
 
 ### [DP](https://programmers.co.kr/learn/courses/30/parts/12263)
 
