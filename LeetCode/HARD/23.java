@@ -5,14 +5,18 @@
 class Solution {
     
     public ListNode mergeKLists(ListNode[] lists) {
-        int k = lists.length;
-        ListNode answer = null;
+        int k = lists.length;     
         
-        int idx = 0;
-        while (idx < k)
-            answer = merge(answer, lists[idx++]);
-        
-        return answer;
+        int interval = 1;
+        while (interval < k) {
+            int idx = 0;
+            while (idx + interval < k) {
+                lists[idx] = merge(lists[idx], lists[idx+interval]);
+                idx += interval * 2;
+            }
+            interval *= 2;
+        }
+        return k == 0 ? null : lists[0];
     }
     
     private ListNode merge(ListNode left, ListNode right) {
