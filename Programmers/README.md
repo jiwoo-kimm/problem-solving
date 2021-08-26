@@ -75,7 +75,7 @@
 |문제이름|레벨|코드|풀이|
 |--|--|--|--|
 |더 맵게|Level 2|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Heap/Scoville.java)|[풀이](https://velog.io/@jwkim/heap-scoville)|
-|디스크 컨트롤러|Level 3|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Heap/DiskController.java)|[풀이](https://velog.io/@jwkim/heap-diskController)|
+|디스크 컨트롤러|Level 3|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Heap/DiskController.java)|[풀이](https://velog.io/@jwkim/heap-disk-controller)|
 |이중우선순위큐|Level 3|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Heap/DoublyPq.java)|-|
 
 ### [DP](https://programmers.co.kr/learn/courses/30/parts/12263)
