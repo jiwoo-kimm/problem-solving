@@ -23,4 +23,4 @@
 ### [2019 카카오 블라인드 채용](https://github.com/jiwoo-kimm/problem-solving/tree/main/2019%20Kakao%20Blind%20Recruitment)
 ### [2021 카카오 블라인드 채용](https://github.com/jiwoo-kimm/problem-solving/tree/main/2021%20Kakao%20Blind%20Recruitment)
 ### [2021 Dev-Matching 웹 백엔드 개발자(상반기)](https://github.com/jiwoo-kimm/problem-solving/tree/main/2021%20Dev-Matching)
-### [2021 카카오 채용연계형 인턴십](https://github.com/jiwoo-kimm/problem-solving/tree/main/2021%20Kakao%Spring%20Internship)
+### [2021 카카오 채용연계형 인턴십](https://github.com/jiwoo-kimm/problem-solving/tree/main/2021%20Kakao%20Spring%20Internship)
