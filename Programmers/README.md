@@ -119,3 +119,4 @@
 |문제이름|레벨|코드|풀이|
 |--|--|--|--|
 |Week 7: 입실 퇴실|Level 2|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Weekly%20Challenge/week7.java)|-|
+|Week 5: 모음사전|Level 2|[코드](https://github.com/jiwoo-kimm/problem-solving/blob/main/Programmers/Weekly%20Challenge/week5.java)|-|
