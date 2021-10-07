@@ -1,23 +1,24 @@
 // LeetCode
 // 124. Binary Tree Maximum Path Sum
-// 2021.05.27
+// 2021.10.07
 
 class Solution {
     
-    int max = Integer.MIN_VALUE;
+    private int answer = Integer.MIN_VALUE;
     
     public int maxPathSum(TreeNode root) {
-        oneSideDfs(root);
-        return max;
+        oneSideSum(root);
+        return answer;
     }
     
-    private int oneSideDfs(TreeNode root) {
-        if (root == null) return 0;
+    private int oneSideSum(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
         
-        int left = Math.max(0, oneSideDfs(root.left));
-        int right = Math.max(0, oneSideDfs(root.right));
-        max = Math.max(max, root.val+left+right);
-        
-        return root.val + Math.max(left, right);
+        int leftSum = Math.max(0, oneSideSum(root.left));
+        int rightSum = Math.max(0, oneSideSum(root.right));
+        answer = Math.max(answer, root.val + leftSum + rightSum);
+        return root.val + Math.max(leftSum, rightSum);
     }
 }
